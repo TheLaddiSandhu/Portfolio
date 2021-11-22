@@ -6,9 +6,13 @@ router.get('/', function(req, res, next) {
   res.render('home', { title: 'Home' });
 });
 
+router.get('/home', function(req, res, next) {
+  res.render('home', { title: 'Home' });
+});
+
 /* GET projects page. */
 router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'projects' });
+  res.render('projects', { title: 'Projects' });
 });
 
 /* GET aboutme page. */

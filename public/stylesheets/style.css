@@ -1,8 +1,481 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
 }
 
-a {
-  color: #00B7FF;
+section{
+    padding: 100px 0;
+}
+
+.projects, .aboutme, .contactme, footer{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.projects .projects-content,
+.aboutme .aboutme-content,
+.contactme .contactme-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+section .title::before{
+    content: "";
+    bottom: 0px;
+    width: 150px;
+    height: 4px;
+    background: black;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    padding: 15px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.4s ease;
+    z-index: 100;
+
+}
+
+.navbar .max-width{    
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-weight: 600;
+    color: #fff;
+    font-size: 35px;
+}
+
+.navbar .logo a span{
+    transition: all 0.4s ease;
+    color: red;
+
+}
+
+.navbar .navmenu li{
+    display: inline-block;
+    list-style: none;
+}
+
+.navbar .navmenu li a{
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    margin-left: 25px;
+    transition: color 0.4s ease;
+    display: block;
+}
+
+.navbar .navmenu li a:hover{
+    color: red;
+}
+
+/* menu btn styling */
+.navmenubtn{
+    font-size: 23px;
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+
+/* home section styling */
+.home{
+    background-size: cover;
+    background-attachment: fixed;
+    background: url("/images/banner.jpg");
+    display: flex;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.home .max-width{
+    display: flex;
+    width: 100%;
+}
+
+.home .max-width .row{
+    margin-right: 0;
+}
+
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-weight: 600;
+    font-size: 75px;
+    margin-left: -3px;
+}
+.home .home-content .text-3{
+    margin: 5px 0;
+    font-size: 40px;
+}
+.home .home-content a{
+    margin-top: 20px;
+    display: inline-block;
+    background: red;
+    color: white;
+    padding: 12px 36px;
+    font-size: 25px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.home .home-content a:hover{
+    color: red;
+    background: none;
+}
+
+
+/* projects section styling */
+.projects, .teams{
+    color: black;
+    background: white;
+}
+.projects .title::before,
+.teams .title::before{
+    background: black;
+}
+
+.projects .projects-content .card{
+    transition: all 0.3s ease;
+    background: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 70px 70px;
+    width: calc(50% - 50px);
+    cursor: pointer;
+    color: white;
+}
+.projects .projects-content .card:hover{
+    background: red;
+}
+.projects .projects-content .card .box{
+    transition: all 0.3s ease;
+}
+.projects .projects-content .card:hover .box{
+    transform: scale(1.05);
+}
+.projects .projects-content .card i{
+    font-size: 50px;
+    color: red;
+    transition: color 0.3s ease;
+}
+.projects .projects-content .card:hover i{
+    color: white;
+}
+.projects .projects-content .card .text{
+    margin: 10px 0 7px 0;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* aboutme section styling */
+.aboutme .aboutme-content {
+    padding: 30px;
+    border-radius: 6px;
+    background-color: black;
+}
+.aboutme .aboutme-content .left{
+    width: 45%;
+}
+.aboutme .aboutme-content .left img{
+    height: 400px;
+    width: 400px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+.aboutme .aboutme-content .right{
+    color: white;
+    width: 55%;
+}
+.aboutme .aboutme-content .right .text{
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.aboutme .aboutme-content .right .text span{
+    color: red;
+}
+.aboutme .aboutme-content .right p{
+    text-align: justify;
+}
+.aboutme .aboutme-content .right ul{
+    list-style-type: none;
+    display: inline;
+}
+.aboutme .aboutme-content .right li{
+    display: inline;
+}
+.aboutme .aboutme-content .right a{
+    border-radius: 6px;
+    border: 2px solid red;
+    display: inline-block;
+    background: red;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    transition: all 0.4s ease;
+}
+.aboutme .aboutme-content .right a:hover{
+    color: red;
+    background: none;
+}
+
+
+/* contactme section styling */
+.contactme .contactme-content .column{
+    width: calc(50% - 30px);
+}
+.contactme .contactme-content .text{
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.contactme .contactme-content .left p{
+    text-align: justify;
+}
+.contactme .contactme-content .left .icons{
+    margin: 10px 0;
+}
+.contactme .contactme-content .row{
+    display: flex;
+    align-items: center;
+    height: 65px;
+}
+.contactme .contactme-content .row .info{
+    margin-left: 30px;
+}
+.contactme .contact-content .row i{
+    font-size: 25px;
+    color: red;
+}
+.contactme .contactme-content .info .head{
+    font-weight: 500;
+}
+.contactme .contactme-content .info .sub-title{
+    color: #333;
+}
+.contactme .right form .fields{
+    display: flex;
+}
+.contactme .right form .field,
+.contactme .right form .fields .field{
+    margin-bottom: 15px;
+    height: 45px;
+    width: 100%;
+}
+.contactme .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contactme .right form .name{
+    margin-right: 10px;
+}
+.contactme .right form .field input,
+.contactme .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.contactme .right form .field input:focus,
+.contactme .right form .textarea textarea:focus{
+    border-color: #b3b3b3;
+}
+.contactme .right form .textarea textarea{
+  padding-top: 10px;
+  resize: none;
+}
+.contactme .right form .button-area{
+  display: flex;
+  align-items: center;
+}
+.right form .button-area button{
+  color: white;
+  display: block;
+  width: 160px!important;
+  height: 45px;
+  font-size: 18px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  background: red;
+  border: 2px solid red;
+  border-radius: 6px;
+  transition: all 0.4s ease;
+}
+.right form .button-area button:hover{
+  color: red;
+  background: none;
+}
+
+
+/* footer section styling */
+footer{
+    margin-top: auto;
+    background: black;
+    text-align: center;
+    padding: 15px 23px;
+    color: white;
+}
+
+
+
+/* responsive media query */
+@media (max-width: 1104px) {
+    .aboutme .aboutme-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .navmenubtn{
+        display: block;
+        z-index: 999;
+    }
+    .navmenubtn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .navmenu{
+        background: black;
+        position: fixed;
+        padding-top: 80px;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        text-align: center;
+        transition: all 0.4s ease;
+    }
+    .navbar .navmenu.active{
+        left: 0;
+    }
+    .navbar .navmenu li{
+        display: block;
+    }
+    .navbar .navmenu li a{
+        margin: 20px 0;
+        display: inline-block;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .aboutme .aboutme-content .column{
+        width: 100%;
+    }
+    .aboutme .aboutme-content .left{
+        display: flex;
+        margin: 0 auto 60px;
+        justify-content: center;
+    }
+    .aboutme .aboutme-content .right{
+        flex: 100%;
+    }
+    .projects .projects-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .projects .projects-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .aboutme .aboutme-content .right .text,{
+        font-size: 19px;
+    }
+    .contactme .right form .fields{
+        flex-direction: column;
+    }
+    .contactme .right form .name,
+    .contactme .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
 }
